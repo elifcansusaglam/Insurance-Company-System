@@ -1,0 +1,127 @@
+CREATE TABLE insurance_agency(
+    id SERIAL PRIMARY KEY,
+    insurance_agency VARCHAR(20) NOT NULL,
+    insurance_name VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE insurance_report(
+    id SERIAL PRIMARY KEY,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    profit INTEGER NOT NULL,
+    loss INTEGER NOT NULL,
+    insurance_id INTEGER REFERENCES insurance_agency(id)
+);
+
+insert into insurance_agency(id,insurance_agency,insurance_name)values(1,'A insurance','health');
+insert into insurance_agency(id,insurance_agency,insurance_name)values(2,'A insurance','life');
+insert into insurance_agency(id,insurance_agency,insurance_name)values(3,'A insurance','car');
+insert into insurance_agency(id,insurance_agency,insurance_name)values(4,'B insurance','health');
+insert into insurance_agency(id,insurance_agency,insurance_name)values(5,'B insurance','life');
+insert into insurance_agency(id,insurance_agency,insurance_name)values(6,'B insurance','car');
+insert into insurance_agency(id,insurance_agency,insurance_name)values(7,'C insurance','health');
+insert into insurance_agency(id,insurance_agency,insurance_name)values(8,'C insurance','life');
+insert into insurance_agency(id,insurance_agency,insurance_name)values(9,'c insurance','car');
+
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (1, '2022-07-30', '2024-12-19', 86443, 3637, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (2, '2023-06-13', '2025-04-07', 17320, 3924, 5);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (3, '2020-01-31', '2022-11-17', 74494, 4698, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (4, '2020-03-31', '2021-03-18', 99475, 2293, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (5, '2020-11-12', '2021-09-10', 96869, 3535, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (6, '2021-05-27', '2022-08-21', 17077, 1751, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (7, '2022-09-23', '2029-05-30', 53657, 4013, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (8, '2021-05-10', '2023-05-26', 27145, 4173, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (9, '2020-07-18', '2024-05-06', 11963, 183, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (10, '2020-04-27', '2021-03-30', 36003, 2980, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (11, '2026-06-02', '2027-05-29', 71191, 3198, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (12, '2020-05-30', '2025-06-22', 10570, 1614, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (13, '2024-11-02', '2029-05-25', 2115, 2709, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (14, '2025-06-22', '2027-06-08', 19967, 770, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (15, '2026-03-01', '2028-12-23', 70555, 1852, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (16, '2022-11-18', '2028-04-16', 75164, 2335, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (17, '2021-04-17', '2023-09-13', 16629, 3128, 6);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (18, '2021-07-15', '2024-10-08', 22804, 1382, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (19, '2027-09-13', '2029-04-10', 14203, 433, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (20, '2023-10-08', '2024-04-05', 78331, 1859, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (21, '2022-12-05', '2024-11-09', 76448, 2891, 8);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (22, '2022-11-07', '2023-03-27', 16977, 2123, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (23, '2028-08-05', '2029-05-19', 10630, 1765, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (24, '2022-12-09', '2024-10-18', 23627, 3489, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (25, '2020-07-24', '2022-12-23', 15939, 1047, 7);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (26, '2024-03-28', '2026-05-04', 8895, 3368, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (27, '2021-04-14', '2023-05-25', 44558, 227, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (28, '2021-01-13', '2028-12-27', 70115, 3844, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (29, '2025-05-05', '2027-12-01', 74864, 4673, 9);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (30, '2025-10-11', '2029-09-20', 65983, 3704, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (31, '2026-03-31', '2028-10-09', 2488, 1605, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (32, '2026-10-06', '2029-12-01', 6046, 1061, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (33, '2025-11-19', '2028-07-26', 32294, 674, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (34, '2025-10-08', '2026-08-11', 48359, 13, 5);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (35, '2021-03-04', '2028-11-29', 42681, 1319, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (36, '2025-08-19', '2026-04-01', 66833, 1805, 4);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (37, '2026-03-13', '2029-05-31', 19546, 2259, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (38, '2020-12-19', '2024-08-23', 18072, 2188, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (39, '2024-08-02', '2025-09-19', 27909, 3721, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (40, '2022-01-15', '2026-03-20', 51607, 1117, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (41, '2026-02-09', '2029-08-29', 16742, 4089, 5);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (42, '2020-02-16', '2021-11-02', 93557, 4851, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (43, '2026-03-25', '2028-11-15', 62538, 2331, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (44, '2020-03-05', '2023-12-12', 76598, 2915, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (45, '2022-04-14', '2029-08-07', 33814, 4057, 7);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (46, '2020-08-15', '2022-03-03', 70006, 155, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (47, '2021-01-19', '2026-07-15', 11745, 648, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (48, '2021-01-09', '2023-01-30', 35029, 148, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (49, '2020-07-21', '2023-06-24', 63904, 2034, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (50, '2022-02-16', '2024-10-30', 11791, 2763, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (51, '2021-02-21', '2026-08-28', 17751, 3764, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (52, '2022-07-18', '2029-05-04', 50326, 1400, 9);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (53, '2021-12-01', '2025-10-26', 80547, 2472, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (54, '2026-03-30', '2028-05-12', 19714, 2100, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (55, '2028-07-28', '2029-07-05', 24435, 4121, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (56, '2020-09-05', '2022-04-01', 30148, 4320, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (57, '2022-05-07', '2027-05-15', 95402, 4292, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (58, '2025-11-14', '2028-08-23', 43789, 3527, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (59, '2027-11-12', '2028-11-17', 9844, 281, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (60, '2022-10-19', '2025-11-09', 66593, 959, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (61, '2024-04-05', '2027-11-07', 47247, 1654, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (62, '2022-03-14', '2028-07-17', 8586, 1509, 8);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (63, '2026-02-07', '2028-06-10', 19351, 4489, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (64, '2021-11-12', '2026-01-28', 47050, 1556, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (65, '2021-08-25', '2025-05-29', 64573, 2013, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (66, '2028-08-31', '2029-01-21', 17999, 786, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (67, '2024-07-20', '2027-02-14', 9720, 1625, 4);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (68, '2028-10-26', '2029-04-01', 16861, 4383, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (69, '2027-01-30', '2029-06-09', 54160, 1227, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (70, '2024-11-05', '2026-09-10', 6945, 4680, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (71, '2020-12-20', '2021-05-09', 72113, 1295, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (72, '2026-12-16', '2029-08-25', 98904, 137, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (73, '2022-05-08', '2027-10-14', 82549, 1866, 5);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (74, '2022-09-03', '2029-12-05', 26723, 4615, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (75, '2026-02-27', '2028-11-02', 90330, 2670, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (76, '2023-09-04', '2026-04-11', 39557, 3416, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (77, '2028-09-02', '2029-02-26', 31871, 4118, 6);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (78, '2028-07-19', '2029-11-18', 49370, 750, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (79, '2027-01-13', '2029-03-20', 71816, 303, 4);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (80, '2020-11-29', '2025-01-27', 76914, 1441, 6);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (81, '2023-08-19', '2029-09-17', 55214, 2218, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (82, '2022-09-09', '2027-04-29', 8867, 565, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (83, '2021-10-06', '2023-08-31', 69544, 1356, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (84, '2021-05-21', '2024-01-13', 24068, 4655, 7);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (85, '2021-05-07', '2029-12-19', 48292, 1043, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (86, '2025-06-10', '2028-08-16', 6779, 4830, 8);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (87, '2020-11-12', '2022-06-06', 41269, 4360, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (88, '2020-03-09', '2023-05-16', 67710, 1516, 9);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (89, '2023-04-10', '2029-11-09', 47031, 1228, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (90, '2020-05-30', '2021-04-16', 41331, 4778, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (91, '2022-05-24', '2024-01-24', 22130, 2735, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (92, '2025-04-09', '2028-12-19', 48561, 928, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (93, '2026-12-26', '2029-07-01', 39859, 3339, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (94, '2020-06-08', '2022-02-02', 72890, 632, 3);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (95, '2020-04-02', '2023-12-14', 20560, 2332, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (96, '2021-03-07', '2025-01-15', 24030, 1469, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (97, '2028-11-04', '2029-04-24', 21136, 3225, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (98, '2026-02-27', '2029-01-31', 93537, 4888, 2);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (99, '2023-04-23', '2028-10-01', 70347, 3771, 1);
+insert into insurance_report (id, start_date, end_date, profit, loss, insurance_id) values (100, '2028-03-15', '2029-11-13', 58063, 1713, 1);
+
+

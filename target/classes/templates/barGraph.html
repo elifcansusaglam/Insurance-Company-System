@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width,  initial-scale=1.0"/>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+
+</head>
+
+<body class="mx-auto" background=https://www.whitescreen.online/image/white-background.png>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav">
+			<li class="nav-item active">
+				<a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/reports">Insurance Reports</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/agency">Insurance Agencies</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/allReports">All Reports</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/compare">Compared Data</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/lineChart">Line Chart</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/pieChart">Pie Chart</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/barGraph">Bar Chart</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+<div>
+	<form style="padding-left:8px; padding-right:8px;">
+		<div style class="form-row">
+			<div id="container" style="width:100%; height:350px;"></div>
+			<br>
+			<div id="container-" style="width:100%; height:350px;"></div>
+		</div>
+
+	</form>
+
+</div>
+	<script th:inline="javascript">
+    $(function(){
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'The Most Profitable Types of Insurance'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: [[${surveyMap.keySet()}]],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            max: 2000000,
+            title: {
+                text: ''
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} K</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Insurance Type',
+            data: [[${surveyMap.values()}]]
+        }]
+    });
+ });
+</script>
+
+</body>
+</html>
