@@ -32,7 +32,7 @@ Managers through the system:
 
 ## Insurance Reports
 
-![Insurance Reports](InsuranceReports.png)
+![Insurance Reports](InsuranceReport.png)
 
 ## Insurance Agencies
 
@@ -48,15 +48,15 @@ Managers through the system:
 
 ## Line Chart
 
-[Line Chart](LineChart.png)
+![Line Chart](LineChart.png)
 
 ## Pie Chart
 
-[Pie Chart](PieChart.png)
+![Pie Chart](PieChart.png)
 
 ## Bar Chart
 
-[Bar Chart](BarChart.png)
+![Bar Chart](BarChart.png)
 
 ## Tools Needed
 
