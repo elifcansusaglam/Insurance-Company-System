@@ -40,7 +40,7 @@ Managers through the system:
 
 ## All Reports
 
-![All Reports](InsuranceReport.png)
+![All Reports](AllReports.png)
 
 ## Compared Data
 
